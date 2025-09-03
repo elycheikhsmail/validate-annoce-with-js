@@ -1,8 +1,8 @@
 import "jsr:@std/dotenv/load";
 import { task1 } from "./funcs/task1.ts";
 const uri = Deno.env.get("MONGODB_URI") || "";
-// Database name 
-const dbName = "rim-ebay";
+// Database name  
+const dbName = Deno.env.get("DATABASE_NAME") || ""; 
 // Collection name
 const collectionName = "Annonce";
 
