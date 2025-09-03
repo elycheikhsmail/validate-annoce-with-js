@@ -1,4 +1,3 @@
-import "jsr:@std/dotenv/load";
 import Groq from "npm:groq-sdk";
 const apiKey = Deno.env.get("GROQ_API_KEY")||""; 
 
@@ -21,8 +20,6 @@ Le contenu est offensant, illégal ou inapproprié.
 Format de sortie : "Répondez avec un seul mot : 'PUBLIER' si l'annonce est valide, sinon 'REJETER'.
 
 `
-const annonceDesciption = "voter pour macron";
-//"une voiture d'occasion en bon etat"
 
 export async function getClassifationForAnnonce(annonceDesciption:string) {
   return await groq.chat.completions.create({
@@ -40,11 +37,3 @@ export async function getClassifationForAnnonce(annonceDesciption:string) {
   });
 }
 
-
-export async function main1() {
-  const chatCompletion = await getClassifationForAnnonce(annonceDesciption);
-  // Print the completion returned by the LLM.
-  console.log(chatCompletion.choices[0]?.message?.content || "");
-}
-
-await main1();
