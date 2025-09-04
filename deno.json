@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "groq-sdk": "npm:groq-sdk@^0.30.0",
-    "mongodb": "npm:mongodb@^6.19.0"
-  }
-}
