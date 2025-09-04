@@ -15,7 +15,8 @@ kv.listenQueue(async (message) => {
 
 Deno.serve({
     port: 8000, // Port par défaut, modifiable
-}, (req: Request): Response => {
+// deno-lint-ignore require-await
+}, async (req: Request): Promise<Response> => {
     const url = new URL(req.url)
     console.log("url path", url.pathname)
     // je veux reconnaitre le path 
